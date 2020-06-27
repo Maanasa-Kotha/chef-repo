@@ -25,10 +25,10 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@master
-    - name: Cd into directory
-      run: cd cookbooks/test_cookbook
     - name: Install Chef
       uses: actionshub/chef-install@master
+    - name: Cd into directory
+      run: cd cookbooks/test_cookbook
     - name: Test-Kitchen
       uses: actionshub/test-kitchen@master
       with:
