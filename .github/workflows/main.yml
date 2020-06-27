@@ -28,7 +28,10 @@ jobs:
     - name: Install Chef
       uses: actionshub/chef-install@master
     - name: Cd into directory
-      run: cd cookbooks/test_cookbook
+      run: |
+        cd cookbooks/test_cookbook
+        echo $PATH
+        kitchen test
     - name: Test-Kitchen
       uses: actionshub/test-kitchen@master
       with:
@@ -36,4 +39,4 @@ jobs:
         os: ${{ matrix.os }}
       env:
         CHEF_LICENSE: accept-no-persist
-        KITCHEN_LOCAL_YAML: kitchen.yml
+        KITCHEN_LOCAL_YAML: kitchen.docken.yml
