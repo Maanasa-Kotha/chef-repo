@@ -29,9 +29,8 @@ jobs:
       uses: actionshub/chef-install@master
     - name: Cd into directory
       run: |
-        cd cookbooks/test_cookbook
-        echo $PATH
-        kitchen test 
+        cd cookbooks
+        bash loop_test
       env:
         CHEF_LICENSE: accept-no-persist
         KITCHEN_LOCAL_YAML: kitchen.docken.yml
